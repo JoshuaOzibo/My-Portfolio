@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import Navbar from "./components/Navbar";
 import IntroAnimation from "./components/introAnimation";
 import { AppContext } from "./context/ContextContainer";
-
+import { Hero } from "./components/Hero";
 
 export default function App() {
 const {darkMood} = useContext(AppContext)
@@ -11,6 +11,7 @@ const {darkMood} = useContext(AppContext)
       <IntroAnimation />
       <div className="fixed w-full">
         <Navbar />
+        <Hero />
       </div>
     </div>
   );
