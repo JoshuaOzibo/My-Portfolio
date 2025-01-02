@@ -142,3 +142,10 @@ export const skillsList = [
   },
   
 ];
+
+export const Socials = {
+    Instagram: "https://www.google.com",
+    Linkedin: "https://www.google.com",
+    Github: "https://www.google.com",
+    TikTok: "https://www.google.com",
+  };
