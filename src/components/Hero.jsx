@@ -1,4 +1,5 @@
 import { useId } from "react";
+import MyImage from "../assets/swiftcareerPreviewImage.webp";
 
 import { cn } from "../lib/utils";
 
@@ -16,15 +17,11 @@ export function Hero({
   const id = useId();
 
   return (
-    <div className="relative flex h-[500px] w-[85%] m-auto items-center justify-center overflow-hidden rounded-lg bg-background">
-      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
-        Dot Pattern
-      </p>
-
+    <div className="relative -top-[100px] flex h-[800px] w-[85%] m-auto items-center justify-center overflow-hidden z-10 rounded-lg bg-background">
       <svg
         aria-hidden="true"
         className={cn(
-          " inset-0 absolute h-full top-10 w-full fill-neutral-400/80",
+          " inset-0 absolute h-full z-10 top-20 w-full fill-neutral-400/80",
           className
         )}
         {...props}
@@ -57,6 +54,43 @@ export function Hero({
           mask={`url(#mask-${id})`}
         />
       </svg>
+
+      <div className=" border mt-[200px] px-5 z-20 border-gray-400 rounded-lg py-3 md:w-[450px]">
+        <img
+          className="w-[150px] bg-slate-500 h-[150px] m-auto object-cover rounded-full"
+          src={MyImage}
+          alt="MyImage"
+        />
+        <div className="space-y-2">
+          <h1 className="text-center text-3xl font-bold">Ozibo Joshua</h1>
+
+          <div className=" w-full flex justify-center items-center">
+            <button className="border text-2xl font-bold rounded-full px-14 py-2 cursor-pointer">
+              Contact Me
+            </button>
+          </div>
+
+          <p className="text-center text-sm font-medium">
+            Typical response within 24 hours
+          </p>
+        </div>
+
+        <div className="mt-5">
+          <p className="text-medium font-bold">About Me.</p>
+        <p className=" text-sm leading-5 text-black ">
+          I am a passionate Frontend Developer with expertise in Next.js,
+          React.js, and TypeScript.
+          <br />
+          I specialize in building websites from scratch, creating scalable
+          designs, and crafting beautiful, user-friendly interfaces. My skill
+          set also extends to optimizing website performance, ensuring fast,
+          seamless, and efficient user experiences.
+          <br />I thrive on turning ideas into visually appealing and functional
+          web applications, combining technical precision with creative design
+          to deliver impactful solutions.
+        </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -37,11 +37,16 @@ const introAnimation = () => {
           },
           "> 0.3"
         );
-      }, []);
+
+        
+        tl.eventCallback('onComplete', () => {
+            document.body.style.overflow = 'auto';
+        });
+    }, []);
   return (
     <div
         id="blackOverlay"
-        className="z-10 bg-black flex justify-center items-center absolute h-screen w-full bottom-0 top-0"
+        className="z-50 bg-black fixed inset-0 flex justify-center items-center"
       >
         <div className=" px-10 pt-1 overflow-hidden">
           <h1
@@ -57,4 +62,5 @@ const introAnimation = () => {
   )
 }
 
-export default introAnimation
+export default introAnimation;
+

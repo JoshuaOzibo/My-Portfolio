@@ -5,7 +5,9 @@ export const AppContext = createContext();
 const ContextProvider = ({ children }) => {
   const [darkMood, setDarkMood] = useState(false);
   // switch darkMood button;
-  const handleDarkmoodButton = () => setDarkMood((prev) => !prev);
+  const handleDarkmoodButton = () => {
+    setDarkMood((prev) => !prev);
+  };
 
   const contextValue = {
     darkMood,
