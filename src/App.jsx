@@ -4,6 +4,7 @@ import IntroAnimation from "./components/introAnimation";
 import { AppContext } from "./context/ContextContainer";
 import { Hero } from "./components/Hero";
 import Projects from "./components/Projects";
+import Skills from './components/Skills'
 export default function App() {
 const {darkMood} = useContext(AppContext)
   return (
@@ -13,6 +14,7 @@ const {darkMood} = useContext(AppContext)
         <Navbar />
         <Hero />
         <Projects />
+        <Skills />
       </div>
     </div>
   );
