@@ -7,7 +7,7 @@ import Projects from "./components/Projects";
 export default function App() {
 const {darkMood} = useContext(AppContext)
   return (
-    <div className={darkMood ? "relative h-screen bg-black" : "relative h-screen"}>
+    <div style={darkMood ? {backgroundColor: 'black'} : {}}>
       <IntroAnimation />
       <div className=" w-full">
         <Navbar />

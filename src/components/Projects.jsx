@@ -20,7 +20,7 @@ const Projects = () => {
       });
     });
 
-    // Create the animation
+    // Create Animation for each cards
     gsap.fromTo(
       cards,
       {
