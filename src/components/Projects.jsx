@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import swiftcareerPreviewImage from "../assets/swiftcareerPreviewImage.webp";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import projectLis from '../lib/Data'
 
 const Projects = () => {
   useEffect(() => {
@@ -58,8 +59,8 @@ const Projects = () => {
         Projects
       </h1>
 
-      <div className="relative bg-slate-400 py-10 min-h-[200vh]">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((_, index) => (
+      <div className="relative py-10 min-h-[200vh]">
+        {projectLis.map((project, index) => (
           <div
             key={index}
             id="cards"
@@ -67,9 +68,10 @@ const Projects = () => {
           >
             {/* img section */}
             <div>
-              <img src={swiftcareerPreviewImage} alt="swiftcareerImage" />
+              <img src={project.Image} alt="swiftcareerImage" />
             </div>
-            <div className="md:flex md:space-y-0 space-y-5 justify-between gap-5 m-auto my-5">
+            <h4 className=" text-sm font-bold uppercase py-3">{project.header}</h4>
+            <div className="md:flex md:space-y-0 space-y-5 justify-between gap-5 m-auto">
               <button className="bg-blue-400 font-bold w-full py-2 rounded-md">
                 Github Url
               </button>
