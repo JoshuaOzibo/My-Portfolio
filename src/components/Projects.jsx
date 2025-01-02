@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {projectLis} from '../lib/Data'
+import { projectLis } from "../lib/Data";
+import { FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   useEffect(() => {
@@ -47,6 +49,33 @@ const Projects = () => {
       }
     );
 
+    // Add this new animation for project overlays
+    cards.forEach((card) => {
+      const overlay = card.querySelector("#projectOverlay");
+
+      // Set initial position of overlay (hidden below)
+      gsap.set(overlay, {
+        y: "100%",
+      });
+
+      // Create hover animations
+      card.addEventListener("mouseenter", () => {
+        gsap.to(overlay, {
+          y: 0,
+          duration: 0.5,
+          ease: "power3.out",
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(overlay, {
+          y: "100%",
+          duration: 0.3,
+          ease: "power2.in",
+        });
+      });
+    });
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -66,18 +95,28 @@ const Projects = () => {
             className="md:w-[60%] rounded-lg border border-gray-300 shadow-md bg-black text-white p-2 m-auto "
           >
             {/* img section */}
-            <div>
+            <div className="relative overflow-hidden">
               <img src={project.Image} alt="swiftcareerImage" />
+              <div
+                id="projectOverlay"
+                className="absolute h-full w-full top-0 bottom-0 bg-red-500 p-5"
+              >
+                <div className="flex justify-end space-x-5">
+                  <a href={project.githubUrl} target="_blank">
+                    <FaGithub size={25} />
+                  </a>
+                  <a href={project.liveUrl} target="_blank">
+                    <FaExternalLinkAlt size={25} />
+                  </a>
+                </div>
+                <div className="w-full mt-5">
+                  <p className="text-sm font-light">{project.description}</p>
+                </div>
+              </div>
             </div>
-            <h4 className=" text-sm font-bold uppercase py-3">{project.header}</h4>
-            {/* <div className="md:flex md:space-y-0 space-y-5 justify-between gap-5 m-auto">
-              <button className="bg-blue-400 font-bold w-full py-2 rounded-md">
-                Github Url
-              </button>
-              <button className="bg-blue-400 font-bold w-full py-2 rounded-md">
-                Live Demo
-              </button>
-            </div> */}
+            <h4 className=" text-sm font-bold uppercase py-3">
+              {project.header}
+            </h4>
           </div>
         ))}
       </div>
