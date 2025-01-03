@@ -15,7 +15,7 @@ export const projectLis = [
       adipisicing elit. Accusantium consectetur voluptates totam dignissimos obcaecati quisquam, 
       unde ducimus optio. Quibusdam officiis voluptatem consectetur quia quam ad odio, 
       vero sit tenetur facere!`,
-    liveUrl: "https://question-app.vercel.app",
+    liveUrl: "https://65ba59e7225667e94bab3e2d--lucent-moonbeam-bde399.netlify.app/",
     githubUrl: "https://github.com/yourusername/question-app",
   },
   {
@@ -26,7 +26,7 @@ export const projectLis = [
       adipisicing elit. Accusantium consectetur voluptates totam dignissimos obcaecati quisquam, 
       unde ducimus optio. Quibusdam officiis voluptatem consectetur quia quam ad odio, 
       vero sit tenetur facere!`,
-    liveUrl: "https://mrmunch.vercel.app",
+    liveUrl: "https://dazzling-lokum-b3b899.netlify.app/",
     githubUrl: "https://github.com/yourusername/mrmunch",
   },
   {
@@ -37,7 +37,7 @@ export const projectLis = [
       adipisicing elit. Accusantium consectetur voluptates totam dignissimos obcaecati quisquam, 
       unde ducimus optio. Quibusdam officiis voluptatem consectetur quia quam ad odio, 
       vero sit tenetur facere!`,
-    liveUrl: "https://blinks-app.vercel.app",
+    liveUrl: "https://65ba5e387e7101eb6dfafaa1--meek-tarsier-7da7eb.netlify.app/",
     githubUrl: "https://github.com/yourusername/blinks-app",
   },
   {
@@ -48,7 +48,7 @@ export const projectLis = [
       adipisicing elit. Accusantium consectetur voluptates totam dignissimos obcaecati quisquam, 
       unde ducimus optio. Quibusdam officiis voluptatem consectetur quia quam ad odio, 
       vero sit tenetur facere!`,
-    liveUrl: "https://donate-platform.vercel.app",
+    liveUrl: "https://prismatic-croquembouche-29970f.netlify.app/",
     githubUrl: "https://github.com/yourusername/donate-platform",
   },
   {
@@ -59,7 +59,7 @@ export const projectLis = [
       adipisicing elit. Accusantium consectetur voluptates totam dignissimos obcaecati quisquam, 
       unde ducimus optio. Quibusdam officiis voluptatem consectetur quia quam ad odio, 
       vero sit tenetur facere!`,
-    liveUrl: "https://altschool-clone.vercel.app",
+    liveUrl: "https://sage-meerkat-6d3f72.netlify.app/",
     githubUrl: "https://github.com/yourusername/altschool-clone",
   },
   {

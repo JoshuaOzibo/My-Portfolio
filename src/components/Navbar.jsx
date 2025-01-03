@@ -3,6 +3,7 @@ import { MdOutlineNightlightRound } from "react-icons/md";
 import { LiaGithub } from "react-icons/lia";
 import { MdOutlineLightMode } from "react-icons/md";
 import { AppContext } from "../context/ContextContainer";
+import {Socials} from '../lib/Data';
 
 // navbar blue :     <div className="w-full z-20 fixed flex border-b-[0.1px] border-gray-200 h-16 justify-center items-center bg-white/40 backdrop-blur-lg">
 // ... existing code ...
@@ -15,7 +16,7 @@ const Navbar = () => {
     <div className="w-full z-20 fixed flex h-16 justify-center items-center bg-white/40 backdrop-blur-lg">
       <div className="w-[85%] h-full items-center flex md:justify-between">
         {/* Header */}
-        <h1 className="md:text-2xl sm:text-sm text-xs font-bold uppercase">
+        <h1 className="md:text-2xl md:block hidden sm:text-sm text-xs font-bold uppercase">
           Portfolio
         </h1>
 
@@ -43,6 +44,7 @@ const Navbar = () => {
               color="#fff"
             />
           )}
+          <a href={Socials.Github} target="_blank">
           <LiaGithub
             className={
               !darkMood
@@ -52,6 +54,8 @@ const Navbar = () => {
             color={!darkMood ? "#fff" : "#fff"}
             size={25}
           />
+          </a>
+          
         </div>
 
         <div className="md:flex hidden items-center space-x-5">
@@ -71,13 +75,13 @@ const Navbar = () => {
               color="#fff"
             />
           )}
-          {
-            <LiaGithub
+         <a href={Socials.Github} target="_blank">
+         <LiaGithub
               className="cursor-pointer"
               color={!darkMood ? "" : "#fff"}
               size={25}
             />
-          }
+         </a>
         </div>
       </div>
     </div>

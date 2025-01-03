@@ -85,17 +85,17 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="cardContainer" className="w-[85%] py-10 mt-10 m-auto">
+    <div id="cardContainer" className="md:w-[85%] py-10 mt-10 m-auto">
       <h1 className={!darkMood ? "text-2xl text-black text-center font-bold uppercase mb-10" : "text-2xl text-center text-white font-bold uppercase mb-10"}>
         Projects
       </h1>
 
-      <div className="relative py-10 min-h-[170vh] ">
+      <div className="relative py-10 min-h-[180vh] ">
         {projectLis.map((project, index) => (
           <div
             key={index}
             id="cards"
-            className="md:w-[60%] w-[90%] rounded-lg border border-gray-300 shadow-md bg-black text-white p-2 m-auto "
+            className="md:w-[65%] w-[85%] rounded-lg border border-gray-300 shadow-md bg-black text-white p-2 m-auto "
           >
             {/* img section */}
             <div className="relative overflow-hidden">

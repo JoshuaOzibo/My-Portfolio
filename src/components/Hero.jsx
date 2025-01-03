@@ -4,6 +4,7 @@ import MyImage from "../assets/swiftcareerPreviewImage.webp";
 import { ShinyButton } from "../lib/Button";
 import { AppContext } from "../context/ContextContainer";
 import SparklesText from "../lib/Text";
+import { RiLightbulbFlashFill } from "react-icons/ri";
 
 import { cn } from "../lib/utils";
 
@@ -23,7 +24,7 @@ export function Hero({
   const { darkMood } = useContext(AppContext);
 
   return (
-    <div className="relative -top-[100px] flex h-[800px] w-[85%] m-auto items-center justify-center overflow-hidden z-10 rounded-lg bg-background">
+    <div className="relative -top-[100px] flex h-[800px] md:w-[85%] w-[90%] m-auto items-center justify-center overflow-hidden z-10 rounded-lg bg-background">
       <svg
         aria-hidden="true"
         className={cn(
@@ -71,18 +72,23 @@ export function Hero({
           <SparklesText
             className={
               !darkMood
-                ? " text-black text-center mb-5 text-3xl font-bold"
-                : "text-center  mb-5 text-white text-3xl font-bold"
+                ? " text-black uppercase text-center mb-5 text-3xl font-bold"
+                : "text-center mb-5 text-white text-3xl font-bold"
             }
             text="Ozibo Joshua"
           ></SparklesText>
 
           <div className=" w-full flex justify-center items-center">
-            <ShinyButton textColor="bg-black text-white rounded-full border md:text-2xl sm:text-lg text-sm font-bold rounded-full px-14 py-2 cursor-pointer">
+            <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
+              Download Cv
+            </ShinyButton>
+            <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
               Let’s Connect
             </ShinyButton>
           </div>
 
+          <div className=" flex justify-center items-center space-x-1">
+            <RiLightbulbFlashFill color={!darkMood ? "red" : "yellow" }/>
           <p
             className={
               !darkMood
@@ -90,8 +96,9 @@ export function Hero({
                 : "text-center text-white text-sm font-medium"
             }
           >
-            Typical response within 24 hours
+            Expect a response within 24 hours.
           </p>
+          </div>
         </div>
 
         <div className="mt-5">
