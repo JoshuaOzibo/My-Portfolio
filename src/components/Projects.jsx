@@ -7,7 +7,6 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import { AppContext } from "../context/ContextContainer";
 
 
-
 const Projects = () => {
   const { darkMood, } = useContext(AppContext);
   useEffect(() => {
@@ -45,7 +44,7 @@ const Projects = () => {
           trigger: "#cardContainer",
           start: "top 5%",
           end: "+=800%",
-          markers: true,
+          // markers: true,
           scrub: 1,
           pin: true,
           pinSpacing: true,
@@ -96,14 +95,14 @@ const Projects = () => {
           <div
             key={index}
             id="cards"
-            className="md:w-[60%] rounded-lg border border-gray-300 shadow-md bg-black text-white p-2 m-auto "
+            className="md:w-[60%] w-[90%] rounded-lg border border-gray-300 shadow-md bg-black text-white p-2 m-auto "
           >
             {/* img section */}
             <div className="relative overflow-hidden">
               <img src={project.Image} alt="swiftcareerImage" />
               <div
                 id="projectOverlay"
-                className="absolute h-full w-full top-0 bottom-0 bg-red-500 p-5"
+                className="absolute h-full w-full top-0 bottom-0 bg-white text-black p-5"
               >
                 <div className="flex justify-end space-x-5">
                   <a href={project.githubUrl} target="_blank">

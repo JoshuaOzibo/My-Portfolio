@@ -4,10 +4,9 @@ import { LiaGithub } from "react-icons/lia";
 import { MdOutlineLightMode } from "react-icons/md";
 import { AppContext } from "../context/ContextContainer";
 
-
 // navbar blue :     <div className="w-full z-20 fixed flex border-b-[0.1px] border-gray-200 h-16 justify-center items-center bg-white/40 backdrop-blur-lg">
-      // ... existing code ...
-    // </div>
+// ... existing code ...
+// </div>
 
 const Navbar = () => {
   const { darkMood, handleDarkmoodButton } = useContext(AppContext);
@@ -16,7 +15,9 @@ const Navbar = () => {
     <div className="w-full z-20 fixed flex h-16 justify-center items-center bg-white/40 backdrop-blur-lg">
       <div className="w-[85%] h-full items-center flex md:justify-between">
         {/* Header */}
-        <h1 className="md:text-2xl sm:text-sm text-xs font-bold uppercase">Portfolio</h1>
+        <h1 className="md:text-2xl sm:text-sm text-xs font-bold uppercase">
+          Portfolio
+        </h1>
 
         {/* Logos and Menu */}
         <div className=" md:flex hidden justify-between w-[40%] rounded-full px-16 py-2 border border-black">
@@ -25,8 +26,7 @@ const Navbar = () => {
           <h1>Project</h1>
         </div>
 
-        <div className="m-auto w-[120px] rounded-full px-[4px] py-[3px] md:hidden flex justify-between items-center bg-black">
-        
+        <div className="m-auto w-[120px] hover:w-[130px] rounded-full duration-150 cursor-pointer px-[4px] py-[4px] md:hidden flex justify-between items-center bg-black">
           {!darkMood && (
             <MdOutlineLightMode
               onClick={handleDarkmoodButton}
@@ -43,12 +43,15 @@ const Navbar = () => {
               color="#fff"
             />
           )}
-            <LiaGithub
-              className={!darkMood ? "cursor-pointer border border-[#6de67c] rounded-full" : "cursor-pointer border border-red-400 rounded-full"}
-              color={!darkMood ? "#fff" : "#fff"}
-              size={25}
-            />
-          
+          <LiaGithub
+            className={
+              !darkMood
+                ? "cursor-pointer border border-[#6de67c] rounded-full"
+                : "cursor-pointer border border-red-400 rounded-full"
+            }
+            color={!darkMood ? "#fff" : "#fff"}
+            size={25}
+          />
         </div>
 
         <div className="md:flex hidden items-center space-x-5">
@@ -82,49 +85,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-/**
- * const animateNavbar = () => {
-		const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-		tl.fromTo(logoRef.current, { x: -80, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 })
-			.fromTo(titleRef.current, { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, "-=0.3")
-			.fromTo(navItemsRef.current, { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.1 }, "-=0.3")
-			.fromTo(loginButtonRef.current, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5 }, "-=0.3")
-			.fromTo(signUpButtonRef.current, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5 }, "-=0.3")
-			.fromTo(harmburgerRef.current, { x: 30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3 }, "-=1.2");
-	};
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const currentScrollPos = window.pageYOffset;
-			const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 200;
-
-			if (isVisible && !visible) {
-				setVisible(true);
-				// Delay the animation slightly to allow the navbar to become visible
-				setTimeout(animateNavbar, 50);
-			} else if (!isVisible && visible) {
-				setVisible(false);
-			}
-
-			setPrevScrollPos(currentScrollPos);
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, [prevScrollPos, visible]);
-
-	// Initial animation
-	useGSAP(() => {
-		animateNavbar();
-	}, []);
- */
