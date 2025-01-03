@@ -165,8 +165,8 @@ export const skillsList = [
 ];
 
 export const Socials = {
-  Instagram: "https://www.google.com",
-  Linkedin: "https://www.google.com",
-  Github: "https://www.google.com",
-  TikTok: "https://www.google.com",
+  Instagram: "https://www.instagram.com/only1josh_code/profilecard/?igsh=bHdwMTF0a2hqbzU5",
+  Linkedin: "https://www.linkedin.com/in/joshua-ozibo-799255240/",
+  Github: "https://github.com/JoshuaOzibo",
+  TikTok: "https://www.tiktok.com/@only1josh_code?_t=ZM-8slGV0Dm4er&_r=1",
 };

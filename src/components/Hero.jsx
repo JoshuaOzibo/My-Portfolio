@@ -1,10 +1,11 @@
 import { useId } from "react";
-import React, { useContext } from "react";
-import MyImage from "../assets/swiftcareerPreviewImage.webp";
+import React, { useContext, useState } from "react";
 import { ShinyButton } from "../lib/Button";
 import { AppContext } from "../context/ContextContainer";
 import SparklesText from "../lib/Text";
 import { RiLightbulbFlashFill } from "react-icons/ri";
+import MyImage from '../assets/my-image.webp';
+import MyResume from '../assets/My Resume.pdf'
 
 import { cn } from "../lib/utils";
 
@@ -22,6 +23,8 @@ export function Hero({
   const id = useId();
 
   const { darkMood } = useContext(AppContext);
+
+  const [isImageZoomed, setIsImageZoomed] = useState(false);
 
   return (
     <div className="relative -top-[100px] flex h-[800px] md:w-[85%] w-[90%] m-auto items-center justify-center overflow-hidden z-10 rounded-lg bg-background">
@@ -62,11 +65,25 @@ export function Hero({
         />
       </svg>
 
-      <div className=" border mt-[200px] px-5 z-20 border-gray-400 rounded-lg py-3 md:w-[450px]">
+      {isImageZoomed && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
+          onClick={() => setIsImageZoomed(false)}
+        >
+          <img
+            className="w-[400px] bg-slate-500 h-[400px] rounded-full transform transition-transform duration-500 scale-100"
+            src={MyImage }
+            alt="MyImage"
+          />
+        </div>
+      )}
+
+      <div className="border mt-[200px] px-5 z-20 border-gray-400 rounded-lg py-3 md:w-[450px]">
         <img
-          className="w-[150px] bg-slate-500 h-[150px] m-auto object-cover rounded-full"
-          src={MyImage}
+          className="w-[150px] bg-slate-500 h-[150px] m-auto object-cover rounded-full cursor-pointer transition-transform"
+          src={MyImage }
           alt="MyImage"
+          onClick={() => setIsImageZoomed(true)}
         />
         <div className="space-y-2">
           <SparklesText
@@ -79,8 +96,18 @@ export function Hero({
           ></SparklesText>
 
           <div className=" w-full flex justify-center items-center">
-            <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
-              Download Cv
+          <ShinyButton 
+              textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = {MyResume};
+                link.download = 'Ozibo-Joshua-CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
+              Download CV
             </ShinyButton>
             <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
               Let’s Connect

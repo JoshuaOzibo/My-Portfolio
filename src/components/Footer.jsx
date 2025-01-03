@@ -10,7 +10,7 @@ const Footer = () => {
   const { darkMood } = useContext(AppContext);
 
   return (
-    <div className="border-t border-2 py-10 w-full">
+    <div className="border-t py-10 w-full">
       <h1
         className={
           !darkMood
@@ -22,16 +22,16 @@ const Footer = () => {
       </h1>
       <div className="flex w-full justify-center items-center">
         <div className="flex space-x-5">
-          <a href={Socials.Github}>
+          <a href={Socials.Github} target="_blank" rel="noopener noreferrer">
             <FaGithub color={!darkMood ? "#000" : "#fff"} size={35} />
           </a>
-          <a href={Socials.Linkedin}>
+          <a href={Socials.Linkedin} target="_blank" rel="noopener noreferrer">
             <FaLinkedin color={!darkMood ? "#000" : "#fff"} size={35} />
           </a>
           <a href={Socials.Instagram} target="_blank" rel="noopener noreferrer">
             <FaInstagramSquare color={!darkMood ? "#000" : "#fff"} size={35} />
           </a>
-          <a href={Socials.TikTok}>
+          <a href={Socials.TikTok} target="_blank" rel="noopener noreferrer">
             <AiFillTikTok color={!darkMood ? "#000" : "#fff"} size={35} />
           </a>
         </div>
