@@ -1,5 +1,8 @@
 import { useId } from "react";
+import React, {useContext} from "react";
 import MyImage from "../assets/swiftcareerPreviewImage.webp";
+import {ShinyButton} from '../lib/Button';
+import { AppContext } from "../context/ContextContainer";
 
 import { cn } from "../lib/utils";
 
@@ -15,6 +18,8 @@ export function Hero({
   ...props
 }) {
   const id = useId();
+
+  const { darkMood, } = useContext(AppContext);
 
   return (
     <div className="relative -top-[100px] flex h-[800px] w-[85%] m-auto items-center justify-center overflow-hidden z-10 rounded-lg bg-background">
@@ -62,22 +67,26 @@ export function Hero({
           alt="MyImage"
         />
         <div className="space-y-2">
-          <h1 className="text-center text-3xl font-bold">Ozibo Joshua</h1>
+          <h1 className={!darkMood ? "text-center text-black text-3xl font-bold" : "text-center text-white text-3xl font-bold"}>Ozibo Joshua</h1>
 
           <div className=" w-full flex justify-center items-center">
-            <button className="border text-2xl font-bold rounded-full px-14 py-2 cursor-pointer">
-              Contact Me
+           
+
+            <ShinyButton textColor="bg-black text-white rounded-full">
+               <button className="border md:text-2xl sm:text-lg text-sm font-bold rounded-full px-14 py-2 cursor-pointer">
+               Let’s Connect
             </button>
+            </ShinyButton>
           </div>
 
-          <p className="text-center text-sm font-medium">
+          <p className={!darkMood ? "text-center text-black text-sm font-medium": "text-center text-white text-sm font-medium"}>
             Typical response within 24 hours
           </p>
         </div>
 
         <div className="mt-5">
-          <p className="text-medium font-bold">About Me.</p>
-        <p className=" text-sm leading-5 text-black ">
+          <p className={!darkMood ? "text-medium text-black font-bold" : "text-medium text-white font-bold"}>About Me.</p>
+        <p className={!darkMood ? " text-sm leading-5 text-black " : " text-sm leading-5 text-white "}>
           I am a passionate Frontend Developer with expertise in Next.js,
           React.js, and TypeScript.
           <br />

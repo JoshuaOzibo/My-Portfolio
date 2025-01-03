@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useContext} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projectLis } from "../lib/Data";
 import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { AppContext } from "../context/ContextContainer";
+
+
 
 const Projects = () => {
+  const { darkMood, } = useContext(AppContext);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -82,8 +86,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="cardContainer" className="w-[85%] bg-slate-300 py-10 mt-10 m-auto">
-      <h1 className="text-2xl text-center font-bold uppercase mb-10">
+    <div id="cardContainer" className="w-[85%] py-10 mt-10 m-auto">
+      <h1 className={!darkMood ? "text-2xl text-black text-center font-bold uppercase mb-10" : "text-2xl text-center text-white font-bold uppercase mb-10"}>
         Projects
       </h1>
 
