@@ -108,7 +108,7 @@ const Projects = () => {
                 <img src={project.Image} alt="images" />
                 <div
                   id="projectOverlay"
-                  className="absolute h-full w-full top-0 bottom-0 text-white text-sm font-bold bg-pink-500 p-5"
+                  className="absolute h-full w-full top-0 bottom-0 text-white font-bold bg-pink-500 md:p-5 p-2"
                 >
                   <div className="flex justify-end space-x-5">
                     <a href={project.githubUrl} target="_blank">
@@ -118,8 +118,8 @@ const Projects = () => {
                       <FaExternalLinkAlt color="#fff" size={25} />
                     </a>
                   </div>
-                  <div className="w-full mt-5">
-                    <p className="text-sm font-light">{project.description}</p>
+                  <div className="w-full mt-[2px] md:mt-5">
+                    <p className="md:text-base md:font-medium font-thin text-xs md:leading-5 leading-tight">{project.description}</p>
                   </div>
                 </div>
               </div>

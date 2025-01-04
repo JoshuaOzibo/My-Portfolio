@@ -50,7 +50,7 @@ const introAnimation = () => {
       <div className=" px-10 pt-1 overflow-hidden">
         <h1
           id="welcomeText"
-          className="text-white mb-1 text-center md:text-5xl sm:text-3xl text-sm uppercase font-bold"
+          className="text-white mb-1 text-center md:text-5xl sm:text-3xl text-lg uppercase font-bold"
         >
           Welcome to my Portfolio
         </h1>
