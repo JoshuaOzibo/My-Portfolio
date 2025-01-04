@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
+import { MdEmail } from "react-icons/md";
 import { Socials } from "../lib/Data";
 import { AppContext } from "../context/ContextContainer";
 
@@ -31,8 +31,8 @@ const Footer = () => {
           <a href={Socials.Instagram} target="_blank" rel="noopener noreferrer">
             <FaInstagramSquare color={!darkMood ? "#000" : "#fff"} size={35} />
           </a>
-          <a href={Socials.TikTok} target="_blank" rel="noopener noreferrer">
-            <AiFillTikTok color={!darkMood ? "#000" : "#fff"} size={35} />
+          <a href="mailto:joshuamichaelozibo@gmail.com">
+            <MdEmail color={!darkMood ? "#000" : "#fff"} size={35} />
           </a>
         </div>
       </div>

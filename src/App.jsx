@@ -1,18 +1,18 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import Navbar from "./components/Navbar";
 import IntroAnimation from "./components/introAnimation";
 import { AppContext } from "./context/ContextContainer";
 import { Hero } from "./components/Hero";
 import Projects from "./components/Projects";
-import Skills from './components/Skills';
-import Footer from './components/Footer';
-import MobileMenu from './components/MobileMenu';
+import Skills from "./components/Skills";
+import Footer from "./components/Footer";
+import MobileMenu from "./components/MobileMenu";
 export default function App() {
-const {darkMood} = useContext(AppContext)
+  const { darkMood } = useContext(AppContext);
   return (
-    <div style={darkMood ? {backgroundColor: '#0d1117'} : {}}>
+    <div style={darkMood ? { backgroundColor: "#0d1117" } : {}}>
       <IntroAnimation />
-      <div className=" w-full">
+      <div className=" w-full scroll-smooth">
         <MobileMenu />
         <Navbar />
         <Hero />

@@ -1,15 +1,19 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { Tooltip } from "react-tooltip";
 import { skillsList } from "../lib/Data";
 import { AppContext } from "../context/ContextContainer";
 
-
-
 const Skills = () => {
-    const { darkMood, } = useContext(AppContext);
+  const { darkMood } = useContext(AppContext);
   return (
-    <div className="w-full md:w-[84%] md:px-0 px-6 m-auto py-10">
-      <h1 className={!darkMood ? "text-2xl text-black text-center font-bold uppercase mb-10" : "text-2xl text-white text-center font-bold uppercase mb-10"}>
+    <div id="skills" className="w-full md:w-[84%] md:px-0 px-6 m-auto py-10">
+      <h1
+        className={
+          !darkMood
+            ? "text-2xl text-black text-center font-bold uppercase mb-10"
+            : "text-2xl text-white text-center font-bold uppercase mb-10"
+        }
+      >
         Skills and Expertise
       </h1>
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -20,7 +24,15 @@ const Skills = () => {
             data-tooltip-id={`skill-tooltip-${index}`}
             data-tooltip-content={skill.description}
           >
-            <p className={!darkMood ? 'text-black px-3 py-2' : 'text-white hover:text-black h-full px-3 py-2'}>{skill.name}</p>
+            <p
+              className={
+                !darkMood
+                  ? "text-black px-3 py-2"
+                  : "text-white hover:text-black h-full px-3 py-2"
+              }
+            >
+              {skill.name}
+            </p>
           </div>
         ))}
       </div>

@@ -4,8 +4,8 @@ import { ShinyButton } from "../lib/Button";
 import { AppContext } from "../context/ContextContainer";
 import SparklesText from "../lib/Text";
 import { RiLightbulbFlashFill } from "react-icons/ri";
-import MyImage from '../assets/my-image.webp';
-import MyResume from '../assets/My Resume.pdf'
+import MyImage from "../assets/my-image.webp";
+import MyResume from "../assets/My Resume.pdf";
 
 import { cn } from "../lib/utils";
 
@@ -66,14 +66,15 @@ export function Hero({
       </svg>
 
       {isImageZoomed && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center cursor-pointer"
           onClick={() => setIsImageZoomed(false)}
         >
           <img
-            className="w-[400px] bg-slate-500 h-[400px] rounded-full transform transition-transform duration-500 scale-100"
-            src={MyImage }
+            className="md:w-[400px] md:h-[400px] w-[300px] h-[300px] rounded-full transform transition-transform duration-500 scale-100"
+            src={MyImage}
             alt="MyImage"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
@@ -81,7 +82,7 @@ export function Hero({
       <div className="border mt-[200px] px-5 z-20 border-gray-400 rounded-lg py-3 md:w-[450px]">
         <img
           className="w-[150px] bg-slate-500 h-[150px] m-auto object-cover rounded-full cursor-pointer transition-transform"
-          src={MyImage }
+          src={MyImage}
           alt="MyImage"
           onClick={() => setIsImageZoomed(true)}
         />
@@ -96,12 +97,12 @@ export function Hero({
           ></SparklesText>
 
           <div className=" w-full flex justify-center items-center">
-          <ShinyButton 
+            <ShinyButton
               textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = {MyResume};
-                link.download = 'Ozibo-Joshua-CV.pdf';
+                const link = document.createElement("a");
+                link.href = { MyResume };
+                link.download = "Ozibo-Joshua-CV.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -109,22 +110,28 @@ export function Hero({
             >
               Download CV
             </ShinyButton>
-            <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
-              Let’s Connect
-            </ShinyButton>
+            <a
+              href="https://wa.me/+2347085531738"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
+                Let’s Connect
+              </ShinyButton>
+            </a>
           </div>
 
           <div className=" flex justify-center items-center space-x-1">
-            <RiLightbulbFlashFill color={!darkMood ? "red" : "yellow" }/>
-          <p
-            className={
-              !darkMood
-                ? "text-center text-black text-sm font-medium"
-                : "text-center text-white text-sm font-medium"
-            }
-          >
-            Expect a response within 24 hours.
-          </p>
+            <RiLightbulbFlashFill color={!darkMood ? "red" : "yellow"} />
+            <p
+              className={
+                !darkMood
+                  ? "text-center text-black text-sm font-medium"
+                  : "text-center text-white text-sm font-medium"
+              }
+            >
+              Expect a response within 24 hours.
+            </p>
           </div>
         </div>
 
@@ -142,7 +149,7 @@ export function Hero({
             className={
               !darkMood
                 ? " text-sm leading-5 text-black "
-                : " text-sm leading-5 text-white "
+                : " text-sm leading-5 bg-[#0d1117] text-white "
             }
           >
             I am a passionate Frontend Developer with expertise in Next.js,

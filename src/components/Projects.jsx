@@ -84,51 +84,53 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="cardContainer" className="md:w-[85%] py-10 mt-10 m-auto">
-      <h1
-        className={
-          !darkMood
-            ? "text-2xl text-black text-center font-bold uppercase mb-10"
-            : "text-2xl text-center text-white font-bold uppercase mb-10"
-        }
-      >
-        Projects
-      </h1>
+    <section id="projects">
+      <div id="cardContainer" className="md:w-[85%] py-10 mt-10 m-auto">
+        <h1
+          className={
+            !darkMood
+              ? "text-2xl text-black text-center font-bold uppercase mb-10"
+              : "text-2xl text-center text-white font-bold uppercase mb-10"
+          }
+        >
+          Projects
+        </h1>
 
-      <div className="relative py-10 min-h-[180vh] ">
-        {projectLis.map((project, index) => (
-          <div
-            key={index}
-            id="cards"
-            className="md:w-[60%] w-[85%] rounded-lg border border-gray-300 shadow-md bg-[#0d1117] text-white p-2 m-auto "
-          >
-            {/* img section */}
-            <div className="relative overflow-hidden">
-              <img src={project.Image} alt="images" />
-              <div
-                id="projectOverlay"
-                className="absolute h-full w-full top-0 bottom-0 text-white text-sm font-bold bg-pink-500 p-5"
-              >
-                <div className="flex justify-end space-x-5">
-                  <a href={project.githubUrl} target="_blank">
-                    <FaGithub color="#fff" size={25} />
-                  </a>
-                  <a href={project.liveUrl} target="_blank">
-                    <FaExternalLinkAlt color="#fff" size={25} />
-                  </a>
-                </div>
-                <div className="w-full mt-5">
-                  <p className="text-sm font-light">{project.description}</p>
+        <div className="relative py-10 min-h-[180vh] ">
+          {projectLis.map((project, index) => (
+            <div
+              key={index}
+              id="cards"
+              className="md:w-[60%] w-[85%] rounded-lg border border-gray-300 shadow-md bg-[#0d1117] text-white p-2 m-auto "
+            >
+              {/* img section */}
+              <div className="relative overflow-hidden">
+                <img src={project.Image} alt="images" />
+                <div
+                  id="projectOverlay"
+                  className="absolute h-full w-full top-0 bottom-0 text-white text-sm font-bold bg-pink-500 p-5"
+                >
+                  <div className="flex justify-end space-x-5">
+                    <a href={project.githubUrl} target="_blank">
+                      <FaGithub color="#fff" size={25} />
+                    </a>
+                    <a href={project.liveUrl} target="_blank">
+                      <FaExternalLinkAlt color="#fff" size={25} />
+                    </a>
+                  </div>
+                  <div className="w-full mt-5">
+                    <p className="text-sm font-light">{project.description}</p>
+                  </div>
                 </div>
               </div>
+              <h4 className=" text-sm font-bold uppercase py-3">
+                {project.header}
+              </h4>
             </div>
-            <h4 className=" text-sm font-bold uppercase py-3">
-              {project.header}
-            </h4>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
