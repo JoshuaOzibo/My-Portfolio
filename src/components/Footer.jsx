@@ -14,8 +14,8 @@ const Footer = () => {
       <h1
         className={
           !darkMood
-            ? "md:text-2xl text-xl text-black text-center font-bold uppercase mb-5"
-            : "md:text-2xl text-xl text-white text-center font-bold uppercase mb-5"
+            ? "md:text-2xl font-[SatoshiFont] text-xl text-black text-center font-bold uppercase mb-5"
+            : "md:text-2xl font-[SatoshiFont] text-xl text-white text-center font-bold uppercase mb-5"
         }
       >
         Ozibo Joshua Chinedu
@@ -39,8 +39,8 @@ const Footer = () => {
       <p
         className={
           !darkMood
-            ? "md:text-2xl text-xl text-black text-center font-bold uppercase mb-10 mt-5"
-            : "md:text-2xl text-xl text-white text-center font-bold uppercase mb-10 mt-5"
+            ? "md:text-2xl font-[SatoshiFont] text-xl text-black text-center font-bold uppercase mb-10 mt-5"
+            : "md:text-2xl font-[SatoshiFont] text-xl text-white text-center font-bold uppercase mb-10 mt-5"
         }
       >
         &copy; All Rights Reserved

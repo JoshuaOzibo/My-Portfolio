@@ -17,7 +17,7 @@ const Projects = () => {
     cards.forEach((card, i) => {
       gsap.set(card, {
         position: "fixed",
-        top: "8%",
+        top: "14%",
         left: "50%",
         xPercent: -50,
         zIndex: i + 1,
@@ -42,8 +42,8 @@ const Projects = () => {
         scrollTrigger: {
           trigger: "#cardContainer",
           start: "top 5%",
-          end: "+=800%",
-          // markers: true,
+          end: "+=500%",
+          markers: true,
           scrub: 1,
           pin: true,
           pinSpacing: true,
@@ -89,14 +89,14 @@ const Projects = () => {
         <h1
           className={
             !darkMood
-              ? "text-2xl text-black text-center font-bold uppercase mb-10"
-              : "text-2xl text-center text-white font-bold uppercase mb-10"
+              ? "text-2xl text-[#4f46e5] font-[SatoshiFont] text-center font-bold uppercase mb-10"
+              : "text-2xl text-[#4f46e5] font-[SatoshiFont] text-center font-bold uppercase mb-10"
           }
         >
           Projects
         </h1>
 
-        <div className="relative py-10 min-h-[180vh] ">
+        <div className="relative py-10 md:min-h-[80vh] min-h-[50vh] ">
           {projectLis.map((project, index) => (
             <div
               key={index}
@@ -108,7 +108,7 @@ const Projects = () => {
                 <img src={project.Image} alt="images" />
                 <div
                   id="projectOverlay"
-                  className="absolute h-full w-full top-0 bottom-0 text-white font-bold bg-pink-500 md:p-5 p-2"
+                  className="absolute h-full w-full top-0 bottom-0 text-white bg-[#4f46e5] md:p-5 p-2"
                 >
                   <div className="flex justify-end space-x-5">
                     <a href={project.githubUrl} target="_blank">
@@ -119,11 +119,11 @@ const Projects = () => {
                     </a>
                   </div>
                   <div className="w-full mt-[2px] md:mt-5">
-                    <p className="md:text-base md:font-medium font-thin text-xs md:leading-5 leading-tight">{project.description}</p>
+                    <p className="md:text-base font-[SatoshiFont] md:font-medium font-thin text-xs md:leading-5 leading-tight">{project.description}</p>
                   </div>
                 </div>
               </div>
-              <h4 className=" text-sm font-bold uppercase py-3">
+              <h4 className=" text-sm font-[SatoshiFont] font-bold uppercase py-3">
                 {project.header}
               </h4>
             </div>

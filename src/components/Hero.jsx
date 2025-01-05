@@ -90,15 +90,15 @@ export function Hero({
           <SparklesText
             className={
               !darkMood
-                ? " text-black uppercase text-center mb-5 text-3xl font-bold"
-                : "text-center mb-5 text-white text-3xl font-bold"
+                ? " text-[#4f46e5] font-[SatoshiFont] uppercase text-center mt-2 text-3xl font-bold"
+                : "text-center text-[#4f46e5] uppercase font-[SatoshiFont] text-3xl font-bold"
             }
             text="Ozibo Joshua"
           ></SparklesText>
 
-          <div className=" w-full flex justify-center items-center">
+          <div className=" w-full flex space-x-2 justify-center items-center">
             <ShinyButton
-              textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
+              textColor={!darkMood ? "bg-black text-white font-[SatoshiFont] rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer": "bg-black text-[#df7ba6] font-[SatoshiFont] rounded-full border border-[#df7ba6] md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"}
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = { MyResume };
@@ -115,7 +115,7 @@ export function Hero({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ShinyButton textColor="bg-black text-white rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer">
+              <ShinyButton textColor={!darkMood ? "bg-black text-white font-[SatoshiFont] rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer": "bg-black text-[#df7ba6] font-[SatoshiFont] rounded-full border border-[#df7ba6] md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"}>
                 Let’s Connect
               </ShinyButton>
             </a>
@@ -126,8 +126,8 @@ export function Hero({
             <p
               className={
                 !darkMood
-                  ? "text-center text-black text-sm font-medium"
-                  : "text-center text-white text-sm font-medium"
+                  ? "text-center text-black font-[SatoshiFont] text-sm font-medium"
+                  : "text-center text-white text-sm font-[SatoshiFont] font-medium"
               }
             >
               Expect a response within 24 hours.
@@ -139,8 +139,8 @@ export function Hero({
           <p
             className={
               !darkMood
-                ? "text-medium text-black font-bold"
-                : "text-medium text-white font-bold"
+                ? "text-medium text-[#4f46e5] font-[SatoshiFont]  font-bold"
+                : "text-medium text-[#4f46e5] font-[SatoshiFont] font-bold"
             }
           >
             About Me.
@@ -148,8 +148,8 @@ export function Hero({
           <p
             className={
               !darkMood
-                ? " text-sm leading-5 text-black "
-                : " text-sm leading-5 bg-[#0d1117] text-white "
+                ? " text-sm font-[SatoshiFont] leading-5 bg-[#fff] text-black "
+                : " text-sm font-[SatoshiFont] leading-5 bg-[#0d1117] text-white "
             }
           >
             I am a passionate Frontend Developer with expertise in Next.js,
