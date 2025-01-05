@@ -32,7 +32,7 @@ export function Hero({
         aria-hidden="true"
         className={cn(
           " inset-0 absolute h-full z-10 top-20 w-full fill-neutral-400/80",
-          className
+          className,
         )}
         {...props}
       >
@@ -98,7 +98,11 @@ export function Hero({
 
           <div className=" w-full flex space-x-2 justify-center items-center">
             <ShinyButton
-              textColor={!darkMood ? "bg-black text-white font-[SatoshiFont] rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer": "bg-black text-[#df7ba6] font-[SatoshiFont] rounded-full border border-[#df7ba6] md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"}
+              textColor={
+                !darkMood
+                  ? "bg-black text-white font-[SatoshiFont] rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
+                  : "bg-black text-[#df7ba6] font-[SatoshiFont] rounded-full border border-[#df7ba6] md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
+              }
               onClick={() => {
                 const link = document.createElement("a");
                 link.href = { MyResume };
@@ -115,7 +119,13 @@ export function Hero({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <ShinyButton textColor={!darkMood ? "bg-black text-white font-[SatoshiFont] rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer": "bg-black text-[#df7ba6] font-[SatoshiFont] rounded-full border border-[#df7ba6] md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"}>
+              <ShinyButton
+                textColor={
+                  !darkMood
+                    ? "bg-black text-white font-[SatoshiFont] rounded-full border md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
+                    : "bg-black text-[#df7ba6] font-[SatoshiFont] rounded-full border border-[#df7ba6] md:text-sm sm:text-lg text-xs font-bold rounded-full px-3 py-2 cursor-pointer"
+                }
+              >
                 Let’s Connect
               </ShinyButton>
             </a>

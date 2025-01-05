@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "../lib/utils";
@@ -22,8 +21,7 @@ const animationProps = {
       mass: 0.5,
     },
   },
-}
-
+};
 
 export const ShinyButton = React.forwardRef(
   ({ children, className, textColor = "text-white", ...props }, ref) => {
@@ -40,7 +38,7 @@ export const ShinyButton = React.forwardRef(
         <span
           className={cn(
             "relative block size-full text-sm uppercase tracking-wide dark:font-light",
-            textColor
+            textColor,
           )}
           style={{
             maskImage:

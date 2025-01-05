@@ -25,7 +25,7 @@ const introAnimation = () => {
         ease: "power2.out",
         duration: 1,
         width: "100%",
-      }
+      },
     ),
       "<";
 
@@ -35,7 +35,7 @@ const introAnimation = () => {
         yPercent: -100,
         duration: 1,
       },
-      "> 0.3"
+      "> 0.3",
     );
 
     tl.eventCallback("onComplete", () => {

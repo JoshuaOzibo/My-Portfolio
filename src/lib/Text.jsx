@@ -1,11 +1,9 @@
-
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { cn } from "../lib/utils";
 
-
-const SparklesText= ({
+const SparklesText = ({
   text,
   colors = { first: "#9E7AFF", second: "#FE8BBB" },
   className,
@@ -53,12 +51,10 @@ const SparklesText= ({
     <div
       className={cn("text-6xl font-bold", className)}
       {...props}
-      style={
-        {
-          "--sparkles-first-color": `${colors.first}`,
-          "--sparkles-second-color": `${colors.second}`,
-        }
-      }
+      style={{
+        "--sparkles-first-color": `${colors.first}`,
+        "--sparkles-second-color": `${colors.second}`,
+      }}
     >
       <span className="relative inline-block">
         {sparkles.map((sparkle) => (

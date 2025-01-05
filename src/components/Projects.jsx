@@ -43,12 +43,12 @@ const Projects = () => {
           trigger: "#cardContainer",
           start: "top 5%",
           end: "+=500%",
-          markers: true,
+          // markers: true,
           scrub: 1,
           pin: true,
           pinSpacing: true,
         },
-      }
+      },
     );
 
     // Add this new animation for project overlays
@@ -119,7 +119,9 @@ const Projects = () => {
                     </a>
                   </div>
                   <div className="w-full mt-[2px] md:mt-5">
-                    <p className="md:text-base font-[SatoshiFont] md:font-medium font-thin text-xs md:leading-5 leading-tight">{project.description}</p>
+                    <p className="md:text-base font-[SatoshiFont] md:font-medium font-thin text-xs md:leading-5 leading-tight">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
               </div>
